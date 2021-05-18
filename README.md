@@ -10,6 +10,8 @@ This is an extremely simple PoC, only exposes the HTTPS interface (:8443) and do
 4. `https://localhost:8443/`
 
 # Requirements
+You'll need Docker with compose
+
 You need to generate a self-signed certificate. `./gencerts.sh` will do this for you as long as you have openssl installed. It will ask for some questions for the cert contents, for the common name `localhost` is probably good. 
 
 Since Chrome wants you to be secure, you may need to disable the localhost self-signed ssl protections it has by seting `chrome://flags/#allow-insecure-localhost` to `Enabled`.
