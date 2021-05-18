@@ -1,0 +1,3 @@
+FROM webssh2:latest
+COPY ./config.json /app
+CMD ["DEBUG=* npm run start"]

@@ -1,0 +1,15 @@
+version: '2'
+services:
+  web:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile.nginx
+    volumes:
+      - ./site:/usr/share/nginx/html
+      - ./nginx/certs:/etc/nginx/certs
+    ports:
+    - "8443:8443"
+  webssh2:
+    build:
+      context: ./webssh2
+      dockerfile: Dockerfile.webssh2

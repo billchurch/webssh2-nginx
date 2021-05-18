@@ -1,0 +1,4 @@
+FROM nginx:1.19.10-alpine
+COPY ./conf/nginx.conf /etc/nginx
+EXPOSE 8443
+ENTRYPOINT ["nginx-debug", "-g", "daemon off;"]

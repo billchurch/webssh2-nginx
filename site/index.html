@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </head>
+<body>
+  <div class="container-fluid">
+    <div class="jumbotron">
+      <h1 style="color:red;">WebSSH2 + NGINX</h1>
+      <ol>
+        <li>Enter host to connect to</li>
+        <li>Press return or click launch</li>
+        <li>Enter ssh credentials on the following tab</li>
+      </ol>
+      <div class="form-group">
+        <input type="text" placeholder="Enter Host Name or IP" id="hostIP" value="">
+        <button type="button" class="btn btn-success" onclick="launchURL()">Launch</button>
+      </div>
+    </div>
+  </div>
+</body>
+<script>  
+  document.getElementById('hostIP').onkeydown = function(e){
+    if(e.keyCode == 13){
+      launchURL()
+    }
+  };
+  function launchURL() {
+      var theIP = 
+          document.getElementById("hostIP").value;
+      
+      window.open("/ssh/host/" + theIP)
+  }
+</script>
+</html>
