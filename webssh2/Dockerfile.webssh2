@@ -1,3 +1,3 @@
-FROM billchurch/webssh2:latest
+FROM billchurch/webssh2:dev
 COPY ./config.json /usr/src
 ENV DEBUG=*
